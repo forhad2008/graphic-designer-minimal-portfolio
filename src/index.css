@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #030609;
+    color: #F3F4F6;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030609;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0E1A22;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 230, 187, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00E6BB;
+}
+
+/* Custom Glow Effects */
+.cyan-glow {
+  box-shadow: 0 0 35px -5px rgba(0, 230, 187, 0.3);
+}
+
+.cyan-border-glow {
+  box-shadow: 0 0 20px -3px rgba(0, 230, 187, 0.2), inset 0 0 15px -3px rgba(0, 230, 187, 0.05);
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00E6BB 0%, #00F0A8 40%, #00B8FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gradient-cyan {
+  background: linear-gradient(135deg, #00E6BB 0%, #00B8FF 100%);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
